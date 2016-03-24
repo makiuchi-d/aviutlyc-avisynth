@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------
-      Convert AviUtlYC Fix  for AviSynth 2.5  ver 0.01  by MakKi
+      Convert AviUtlYC Fix  for AviSynth 2.5  ver 1.00  by MakKi
 -----------------------------------------------------------------------
 
 【機能】
@@ -7,18 +7,26 @@
   warpsharp.dllのAviUtl内部形式変換関数の変換式修正版です。
   AviUtl(0.98以降)と全く同じ変換を行ないます。
   SIMD最適化されていないので遅いです。
-  少々色が違っても気にならない方にはおすすめできません。
+  少々色が違っても気にならないという方にはおすすめできません。
 
-【書式】
+【関数】
 
-  ConvertYUY2ToAviUtlYCFix(clip)
-  ConvertAviUtlYCToYUY2Fix(clip)
+  ConvertToAviUtlYCFix(clip)       # YUY2,RGB24,RGB32からの変換
+  ConvertYUY2ToAviUtlYCFix(clip)   # YUY2からの変換 (後方互換)
+
+  ConvertAviUtlYCToYUY2Fix(clip)   # YUY2への変換
+  ConvertAviUtlYCToRGB24Fix(clip)  # RGB24への変換
+  ConvertAviUtlYCToRGB32Fix(clip)  # RGB32への変換
+
+  それぞれの変換式について次のページで解説しています。
+  興味のある方はご覧ください。
+  http://mksoft.hp.infoseek.co.jp/doc/aviutlyc.html
 
 【注意】
 
   このプログラムはフリーソフトウェアです。
   このプログラムによって損害を被った場合でも、作者は責任を負いません。
-  このプログラムはGNU General Public Licenseに従って公開されます。
+  このプログラムはGNU General Public Licenseの元で公開されています。
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -37,9 +45,9 @@
 
 【謝辞】
 
-  このプログラムはwarpsharp.dllのソースを流用しています。
+  このプログラムはwarpsharp.dllのアイディアを元にしています。
    (http://www.geocities.co.jp/SiliconValley-PaloAlto/2382/)
-  AviUtl内部形式の変換式はゴミ置き場を参考にしました。
+  YUY2とAviUtl内部形式の相互変換式はゴミ置き場を参考にしました。
    (http://www.geocities.jp/mosd7500/)
 
   warpsharp.dllの作者様ならびにN099様に感謝します。
@@ -51,6 +59,8 @@
 
 【更新履歴】
 
+  2009/03/29   ver 1.00  ソースを0から書き直し
+                         RGBとの相互変換をサポート
   2006/04/10   ver 0.01  公開
 
 

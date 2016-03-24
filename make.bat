@@ -1,2 +1,2 @@
-cl /LD /FeAviUtlYC.dll /O2 aviutlyc.cpp
+cl /Ox /LD /FeAviUtlYC.dll aviutlyc.cpp
 del *.exp *.lib *.obj
